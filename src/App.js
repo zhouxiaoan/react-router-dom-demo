@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
+import Child from './components/child'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          <ul>
+            <li><Link to="react-router">react router</Link></li>
+            <li><Link to="LeoAshin">LeoAshin</Link></li>
+            <li><Link to="justjavac">justjavac</Link></li>
+            <li><Link to="react-Training">react-Training</Link></li>
+          </ul>
+          <hr/>
+          <Route path="/:id" component={Child}></Route>
+          </div>
+      </Router>
     );
   }
 }
