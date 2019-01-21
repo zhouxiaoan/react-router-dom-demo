@@ -9,7 +9,6 @@ class Topics extends Component {
                 <h1>
                     Topics
                 </h1>
-                <BrowserRouter>
                     <div>
                         <ul>
                             <li><Link to={`${this.props.match.url}/rendering`}>{this.props.match.url}</Link></li>
@@ -19,7 +18,6 @@ class Topics extends Component {
                         <Route path={`${this.props.match.url}/:tipicId`} component={Tip}></Route>
                         <Route exact path={this.props.match.url} render={()=><h3>请选择一个主题</h3>}></Route>
                     </div>
-                </BrowserRouter>
             </div>
         )
     }
